@@ -1,1 +1,3 @@
 /vendor/bundle
+/pids/*
+!/pids/.keep
