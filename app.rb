@@ -84,3 +84,15 @@ post '/parse', provides: :json do
   data[:results] = words
   data.to_json
 end
+
+get '/version', provides: :json do
+  data = {}
+  begin
+    data[:results] = JumanppRuby::Juman.version
+    data[:status] = 'success'
+  rescue
+    data[:status] = 'fail'
+    status 500
+  end
+  data.to_json
+end
