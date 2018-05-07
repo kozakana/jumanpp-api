@@ -13,7 +13,7 @@ config = YAML.load_file('./config.yml')
 juman = JumanppRuby::Juman.new(**config)
 
 def string_param
-  if request['HTTP_ACCEPT'] == 'application/json'
+  if request.env['HTTP_ACCEPT'].include? 'application/json'
     req = request.body.read
     JSON.parse(req)['string']
   else
