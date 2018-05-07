@@ -13,6 +13,8 @@ Dockerfileを使用してビルドすることでDockerコンテナとして利�
 |/split|4567|POST|
 
 #### Params
+formまたはjson形式で送ることができます。JSON形式でリクエストする場合はContent-Typeにapplication/jsonを指定してください。
+
 |key|value|
 |---|---|
 |string|文字列|
@@ -20,6 +22,10 @@ Dockerfileを使用してビルドすることでDockerコンテナとして利�
 #### Example
 ```
 curl -X POST --data 'string=この道をゆけばどうなるものか危ぶむなかれ危ぶめば道はなし踏み出せばその一足が道となりその一足が道となる迷わず行けよ行けば分かるさ' http://localhost:4567/split
+```
+または
+```
+curl -X POST -H 'Content-Type: application/json' --data '{"string":"この道をゆけばどうなるものか危ぶむなかれ危ぶめば道はなし踏み出せばその一足が道となり  その一足が道となる迷わず行けよ行けば分かるさ"}' http://localhost:4567/split
 ```
 
 #### Response
@@ -35,6 +41,8 @@ curl -X POST --data 'string=この道をゆけばどうなるものか危ぶむ�
 |/parse|4567|POST|
 
 #### Params
+formまたはJSON形式で送ることができます。JSON形式でリクエストする場合はContent-Typeにapplication/jsonを指定してください。
+
 |key|value|
 |---|---|
 |string|文字列|
@@ -42,6 +50,10 @@ curl -X POST --data 'string=この道をゆけばどうなるものか危ぶむ�
 #### Example
 ```
 curl -X POST --data 'string=この道をゆけばどうなるものか危ぶむなかれ危ぶめば道はなし踏み出せばその一足が道となりその一足が道となる迷わず行けよ行けば分かるさ' http://localhost:4567/parse
+```
+または
+```
+curl -X POST -H 'Content-Type: application/json' --data '{"string":"この道をゆけばどうなるものか危ぶむなかれ危ぶめば道はなし踏み出せばその一足が道となりその一足が道となる迷わず行けよ行けば分かるさ"}' http://localhost:4567/parse
 ```
 
 #### Response
