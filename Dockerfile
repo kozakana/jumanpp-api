@@ -1,12 +1,12 @@
-FROM ruby:2.5.1-alpine3.7
+FROM ruby:2.6.5-alpine3.11
 
 MAINTAINER kozakana
 
 ENV JUMAN_VERSION 1.02
 ENV APP_ROOT /var/app/current/
 
-RUN echo http://mirror.yandex.ru/mirrors/alpine/v3.7/main > /etc/apk/repositories; \
-    echo http://mirror.yandex.ru/mirrors/alpine/v3.7/community >> /etc/apk/repositories
+RUN echo http://mirror.yandex.ru/mirrors/alpine/v3.11/main > /etc/apk/repositories; \
+    echo http://mirror.yandex.ru/mirrors/alpine/v3.11/community >> /etc/apk/repositories
 
 RUN apk add --update --no-cache --virtual=build-deps \
     boost-dev g++ make \
