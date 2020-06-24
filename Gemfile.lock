@@ -5,7 +5,7 @@ GEM
     kgio (2.11.3)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     raindrops (0.19.1)
